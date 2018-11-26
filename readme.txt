@@ -42,6 +42,11 @@ After reading, playing with them and understanding what they do, here are some e
 
 3) Besides the previous discount, if you buy 3 items of the same type (e.g. 3 pencils) you may get one more for free. So, if you buy 4 pencils you only pay 3, if you buy 8 pencils you only pay 6, etc. Change totalPrice so it considers the free items you get. Notice that if you buy 3 pencils you just pay the 3 of them.
 
-4) Sometimes a product is sold out and has to be replaced by a new one. Add a method replace(productName, replacementProduct) that looks for products with productName and replaces them by new instances of the product like replacementProduct. Notice that productName is a string, and replacementProduct is a Product. Also, bear in mind that you don't have to add the replacementProduct itself to the cart, but create new products like that one (whenever necessary).
+4) Sometimes a product is sold out and has to be replaced by a new one. 
+Add a method replace(productName, replacementProduct) that looks for products with productName and replaces them 
+by new instances of the product like replacementProduct. 
+Notice that productName is a string, and replacementProduct is a Product. 
+Also, bear in mind that you don't have to add the replacementProduct itself to the cart, 
+but create new products like that one (whenever necessary).
 
 Important: always implement one exercise at a time (if possible just parts of it), and test each solution (or each change) with different combinations of products. The general idea is, code a bit and try, code a bit and try...
