@@ -49,7 +49,7 @@ class ShoppingCart {
 
 
         var count = [];
-        var discount = 0;
+        var priceForfreeItem = 0;
         // this.products.forEach(function(x){ count[x.name] = (count[x.name] || 0)+1; });
         this.products.forEach(function (x) {
             if (count[x] === undefined) {
@@ -57,14 +57,14 @@ class ShoppingCart {
             } else {
                 count[x] = count[x] + 1
                 if (count[x] % 4 === 0) {
-                    discount += x.price
+                    priceForfreeItem += x.price
                 }
             }
         });
       
-        // console.log("discount: " + discount);
-        this.discount = discount;
-        console.log("this.discount: " + this.discount);
+        console.log("priceForfreeItem: " + priceForfreeItem);
+        this.discount = priceForfreeItem;
+        console.log("priceForfreeItem: " + this.discount);
         this.total_price -= this.discount
         this.global_count = count
         // console.log("show me the count" + this.global_count);
@@ -78,7 +78,7 @@ class ShoppingCart {
         console.log("products array:" + array);
         var new_price = this.total_price
         console.log(new_price);
-        // var original_price_sum = 0; //??
+        var original_price_sum = 0; //??
         var substitute_price_sum = 0;
         var check = false;
         console.log("the products array: " + array);
@@ -95,9 +95,9 @@ class ShoppingCart {
         console.log(check);
         console.log(array);
  
-        array.forEach(function (prod, i) { 
+        array.forEach(function (product, i) { 
             if (check = true) {
-                substitute_price_sum += prod.price;
+                substitute_price_sum += product.price;
             }
         })
         console.log(array);
@@ -132,10 +132,10 @@ cart.addProduct(p);
 // cart.addProduct(p);
 // cart.addProduct(p);
 
-// cart.addProduct(p2);
-// cart.addProduct(p2);
-// cart.addProduct(p2);
-// cart.addProduct(p2);
+cart.addProduct(p2);
+cart.addProduct(p2);
+cart.addProduct(p2);
+cart.addProduct(p2);
 // cart.addProduct(p2);
 // cart.addProduct(p2);
 // cart.addProduct(p2);
@@ -164,7 +164,7 @@ cart.quantity_check();
 console.log("We have a " + cart);
 cart.replace("vacuum cleaner", p_replace);
 cart.replace("pencil", p2_replace);
-// cart.replace("bike", p3_replace)
+cart.replace("bike", p3_replace)
 //to add discounts to the new price:
 cart.quantity_check();
 console.log(cart)
