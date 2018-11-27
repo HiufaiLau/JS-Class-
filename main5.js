@@ -55,7 +55,7 @@ class ShoppingCart {
             if (count[x] === undefined) {
                 count[x] = 1;
             } else {
-                count[x] = count[x] + 1
+                count[x] += 1
                 if (count[x] % 4 === 0) {
                     priceForfreeItem += x.price
                 }
@@ -71,39 +71,37 @@ class ShoppingCart {
 
     }
 
-   
-
     replace(productName, replacementProduct) {
         var array = this.new_products;
         console.log("products array:" + array);
         var new_price = this.total_price
         console.log(new_price);
-        var original_price_sum = 0; //??
-        var substitute_price_sum = 0;
+        // var original_price_sum = 0; //??
+        var new_price_sum = 0;
         var check = false;
-        console.log("the products array: " + array);
-        array.forEach(function (oneProduct, i) {
-            if (oneProduct.name == productName) {
-                console.log(oneProduct.price);
+        // console.log("the products array: " + array);
+        array.forEach(function (replaceProduct, i) {
+            if (replaceProduct.name == productName) {
+                console.log(replaceProduct.price);
 
                 array.splice(i, 1, replacementProduct);
-                console.log(oneProduct.price)
-                console.log(array);
+                console.log(" replace product: "+ replaceProduct.price)
+                // console.log("array" + array);
                 check = true
             }
         })
-        console.log(check);
-        console.log(array);
+        // console.log(check);
+        console.log ("array" + array);
  
         array.forEach(function (product, i) { 
             if (check = true) {
-                substitute_price_sum += product.price;
+                new_price_sum += product.price;
             }
         })
         console.log(array);
-        console.log("substitute_price_sum: " + substitute_price_sum);
+        console.log("substitute_price_sum: " + new_price_sum);
        
-        new_price = substitute_price_sum;
+        new_price = new_price_sum;
         this.products = array;
         this.total_price = new_price;
         console.log(this.products);
@@ -162,7 +160,7 @@ cart.addProduct(p3);
 //to add discounts:
 cart.quantity_check();
 console.log("We have a " + cart);
-cart.replace("vacuum cleaner", p_replace);
+// cart.replace("vacuum cleaner", p_replace);
 cart.replace("pencil", p2_replace);
 cart.replace("bike", p3_replace)
 //to add discounts to the new price:
